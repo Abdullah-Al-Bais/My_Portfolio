@@ -1,0 +1,523 @@
+:root{
+    --body-color:  #ffe600;
+    --container-color: #e3e3e3;
+    --div-color: #ffffff;
+    --text-color: #383838;
+    --toggle-grad: linear-gradient(145deg, #dcdcdc, #ffffff);
+    --toggle-shadow: 3px 3px 10px #ffb300,
+                    -3px -3px 5px #bababa;
+    --ball-translate: translateX(0px);
+    --toggle-sun-color: #ffffff;
+    --toggle-moon-color: #a7a7a7;
+    --ball-color: #7b7a7a;
+    --controll-shadow-color1:rgba(255, 183, 0, 0.851);
+    --controll-shadow-color2: rgba(0, 0, 0, 0.5);
+    --controll-icon-color: #000000;
+}
+.darkmode{
+    --body-color: #7b7a7a;
+    --container-color: #272222;
+    --div-color: #a7a7a7;
+    --text-color: #faf8f8;
+    --toggle-grad: linear-gradient(145deg, #4d4d4d, #a7a7a7);
+    --toggle-shadow: 3px 3px 10px #4d4d4d,
+                    -3px -3px 5px #e3e3e3;
+    --ball-translate: translateX(30px);
+    --toggle-sun-color: #ffb300;
+    --toggle-moon-color: #ffffff;
+    --ball-color: #ffb300;
+    --controll-shadow-color1: rgba(255, 255, 255, 0.8);
+    --controll-shadow-color2: rgba(0, 0, 0, 0.8);
+    --controll-icon-color: #ffffff;
+}
+body{
+    background-color: var(--body-color);
+    margin: auto;
+    min-height: 100vh;
+    min-width: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    display: grid;
+    place-items: center;
+}
+.container{
+    position: relative;
+    background-color: var(--container-color);
+    /* min-height: 90%; */
+    height: 100%;
+    box-sizing: content-box;  
+    width: 100%;
+    /*min-width: 95%;*/
+    /*margin: 5% ;*/
+    /* border-radius: 20px; */
+    display: grid;
+    grid-template-columns: 230px auto 95px;
+    grid-gap: 20px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.8);
+}
+.left{
+    background-color: var(--div-color);
+    /* border-radius: 20px 0 0 20px; */
+    height: 100vh;
+    width: 230px;
+    display: grid;
+    grid-template-columns: 200px;
+    grid-template-rows: min-content 60px 40px 10px 100px 10px min-content 10px;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: none;
+}
+/* .left .dl{
+    background-color: #000000;
+    height: 20px;
+    margin-bottom: 10px;
+} */
+.left .pic{
+    background-color: #e3e3e3;
+    background-image: url("bais_nobg.png");
+    background-size: cover;
+    background-position: center;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin-top: 20px;
+    align-self: center;
+    justify-self: center;
+    /* box-shadow: 3px 3px 10px var(--controll-shadow-color1),
+                -3px -3px 10px var(--controll-shadow-color1); */
+}
+.left .text{
+    margin-top: 5px;
+    text-align: center;
+}
+.left .text h3{
+    margin-top: 0px;
+}
+.left .text p{
+    margin-top: -20px;
+}
+.left .icon-box{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    text-align: center;
+    place-items: center;
+    
+}
+.left .icon-box .icon{
+    cursor: pointer;
+    background-color: var(--container-color);
+    width: 25px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 3px var(--controll-shadow-color1),
+                inset 0 3px 3px var(--controll-shadow-color2);
+}
+.left .icon-box .icon i{
+    font-size: 0.9rem;
+    color: var(--text-color);
+    pointer-events: none;
+} 
+.left .line hr{
+    margin: auto;
+    width: 180px;
+    border: 1px solid var(--container-color);
+    box-shadow: 2px 0px 5px var(--text-color);
+}
+.left .about{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: min-content min-content min-content;
+    gap: 10px;
+    color: var(--text-color);
+    padding-top: 5px;
+    font-weight: 500;
+    font-size: 13px;
+}
+.left .about .left-span{
+    background-color: var(--body-color);
+    display: inline;
+    border-radius: 3px;
+    padding: 1px 3px;
+    box-shadow: 0 3px 3px var(--controll-shadow-color1),
+                inset 0 3px 5px var(--controll-shadow-color2);
+}
+.left .skill{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+.left .skill .heading{
+    grid-column: 1 / -1;
+    font-weight: bold;
+    font-size: 15px !important;
+    padding-bottom: 10px;
+}
+.left .skill .percentage{
+    text-align: right;
+}
+.left .skill span{
+    font-size: 12px;
+    font-weight: 500;
+}
+.left .skill .skill-hr{
+    grid-column: 1 / -1;
+    display: inline;   
+}
+.left .skill .skill-hr hr{
+    border: none;
+    height: 3px;
+    margin: 0;
+    background: linear-gradient(to right, var(--body-color),var(--body-color),var(--body-color), black);
+    /* box-shadow: 0px 3px 2px var(--controll-shadow-color1); */
+}
+.left .extra-skill{
+    display: grid;
+    color: var(--text-color);
+    margin-top: 5px ;
+}
+.left .extra-skill .heading{
+    font-weight: bold;
+    font-size: 16px;
+    padding-bottom: 10px;
+}
+.left .extra-skill i{
+    font-weight: bold;
+    padding-bottom: 10px;
+    background: linear-gradient(to right, var(--body-color), rgb(0, 0, 0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.left .extra-skill span{
+    font-size: 13px;
+    font-weight: 500;
+    position: relative;
+    top: -5px;
+}
+.right{
+    background-color: var(--div-color);
+    /* border-radius: 0 20px 20px 0; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    height: 100vh;
+    width: 95px;
+    position: fixed;
+    right: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: none;
+}
+.toggle-btn{
+    padding-top: 20px;
+    height: 120px;
+    
+}
+.toggle{
+    position: relative;
+    width: 60px;
+    height: 25px;
+    border-radius: 50px;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    background: var(--toggle-grad);
+    box-shadow: var(--toggle-shadow);
+    transition: 0.3s;
+}
+.toggle .fa-sun{
+    color: var(--toggle-sun-color);
+    transition: 1s;
+}
+.toggle .fa-moon{
+    color: var(--toggle-moon-color);
+    transition: 1s;
+}
+.toggle i{
+    width: 50%;
+    line-height: 25px;
+    text-align: center;
+    font-size: 15px;
+    z-index: 1;
+}
+.toggle .ball{
+    background-color: var(--ball-color);
+    position: absolute;
+    width: 20px ;
+    height: 20px;
+    border-radius: 50%;
+    margin: 3px 5px;
+    transform: var(--ball-translate);
+    transition: 0.3s ease-out;
+}
+#toggleMode{
+    display: none; 
+}
+.right .control{
+    cursor: pointer;
+    background-color: var(--container-color);
+    width: 40px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1.5rem 0;
+    box-shadow: 0 3px 10px var(--controll-shadow-color1),
+                inset 0 3px 10px var(--controll-shadow-color2);
+               
+
+}
+.right .active-btn{
+    background-color: var(--body-color) !important;
+    transition: all .5s ease-in-out;
+    box-shadow: 0 3px 4px var(--controll-shadow-color1),
+                inset 0 3px 10px var(--controll-shadow-color2) !important;
+}
+.right .active-btn i{
+    color: var(--controll-icon-color) !important;
+}
+.right .control i{
+    font-size: 1.2rem;
+    color: var(--text-color);
+    pointer-events: none;
+}
+.control::before{ /*creating tool text for ToolTip*/
+    content: attr(data); /*recieves data from html attribute*/
+    position: absolute;
+    background-color: var(--body-color); /* to change the color recieved from html attribute style*/
+    color: var(--controll-icon-color);
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0.2em 0.3em;
+    border-radius: 70px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+    transform: translateY(-25px) rotate(25deg);
+    opacity: 0;
+    transition: 200ms ease;
+}
+.control::after{/*creating tool tip for ToolTip*/
+    content: '';
+    position: absolute;
+    /*making trangle*/
+    height: 0;
+    width: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 8px solid var(--body-color);
+    transform: translateY(0) rotate(25deg);
+    opacity: 0;
+    transition: 180ms ease;
+
+}
+.control:hover::before{
+    transform: translateY(-40px) rotate(0);
+    opacity: 1;
+}
+.control:hover::after{
+    transform: translateY(-25px) rotate(0);
+    opacity: 1;
+}
+#cv-dwnld{
+    display: none;
+}
+.right .cv{
+    position: relative;
+    width: 80px;
+    height: 25px;
+    border-radius: 50px;
+    margin-bottom: 1.5rem;
+    margin-top: 50px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--toggle-grad);
+    box-shadow: var(--toggle-shadow);
+    transition: 0.3s;
+    color: var(--text-color);
+}
+.right .cv span{
+    font-size: 18px;
+    font-weight: 500;
+    padding-left: 10px;
+}
+.right .cv i{
+    color: var(--text-color);
+}
+.main{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 40vh auto;
+    grid-gap: 20px
+}
+.upper{
+    background-color: var(--div-color);
+    border-radius: 0 0 3px 3px;
+    /* background-image: url('2865.jpg'); */
+    background-size: cover; /* Adjust size */
+    background-position: center 30%; /* Center the image */
+    background-repeat: no-repeat;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    min-height: 25vh;
+}
+.upper .text{
+    /* background-color: #91919168; */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: flex-end;
+
+}
+.upper .text .text2{
+    /* background-color: #c3c3c3; */
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+.upper .text .text2 .span{
+    font-size: 3vw;
+    font-weight: 700;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    position: absolute;
+    top: 6vh;
+    left: 20%;
+}
+.upper .text .text2 span{
+    display: inline-block;
+}
+.upper .text .text2 ul{
+    list-style: none;
+    padding: 0;
+    margin: .5vh 0 1vh 0;
+    height: 6vh ;
+    line-height: 6vh;
+    overflow: hidden;
+    position: absolute;
+    top: 35%;
+    left: 20%;
+}
+.upper .text .text2 li{
+    list-style: none;
+    font-size: 2vw;
+    font-weight: 700;
+    color: var(--body-color);
+    position: relative;
+    top: 0px;
+    animation: slide 12s steps(4) infinite;
+}
+@keyframes slide {
+    100%{
+        top: -24vh;
+    }
+}
+.upper .text .text2 li span{
+    position: relative;
+}
+.upper .text .text2 li span::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 20%;
+    height: 80%;
+    width: 100%;
+    background: var(--div-color);
+    border-left: 3px solid var(--text-color);
+    animation: typing 3s steps(19) infinite;
+}
+@keyframes typing {
+    100%{
+        left: 100%;
+        margin: 0 -15px 0 10px;
+    }
+}
+.upper .text .text2 .span2{
+    font-size: 1.2vw;
+    margin-top: 1rem ;
+    padding: 0;
+    width: 20vw;
+    color: var(--text-color);
+    position: absolute;
+    top: 50%;
+    left: 20%;
+}
+.upper .picture{
+    /* background-color: #bd93933b; */
+    background: url('bais_nobg.png') no-repeat center/contain;
+    max-width: 100%;
+    height: auto;
+}
+.lower{
+    
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr min-content;
+    grid-gap: 30px
+}
+.serviceText{
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center;
+    color: var(--text-color);
+    
+}
+.serviceText > p, h2{
+    max-width: 500px;
+    margin: 2px; /* Remove default margin */
+    padding: 0; /* Ensure no extra space */
+    line-height: 1
+}
+.serviceOptions{
+    padding-left: 30px;
+    padding-right: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    box-sizing: border-box;
+    padding-bottom: 0px;
+    gap: 30px;
+
+
+}
+.options{
+    background-color: var(--div-color);
+    width: 200px;
+    height: 200px;  
+    padding: 20px;
+    text-align: center; 
+    color: var(--text-color);
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px min-content min-content;
+
+}
+.options i{
+    font-size: 3rem;
+    align-self: center;
+    color: var(--body-color);
+}
+.options span{
+    margin: 0;
+    padding: 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
