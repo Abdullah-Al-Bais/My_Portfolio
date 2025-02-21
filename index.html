@@ -11,6 +11,9 @@
     <div class="container">
         <div class="dummy-left"></div>
         <div class="left">
+            <button class="hideleft" onclick="hideleft()">
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
             <div class="dl pic"></div>
             <div class="dl text">
                 <h3>Abdullah Al Bais</h3>
@@ -19,7 +22,7 @@
             <div class="dl icon-box">
                 <div class="icon"><i class="icon fa-brands fa-facebook-f"></i></div>
                 <div class="icon"><i class="icon fa-brands fa-linkedin-in"></i></div>
-                <div class="icon"><i class="icon fa-brands fa-x-twitter"></i></div>
+                <div class="icon"><i class="fa-brands fa-github"></i></div>
                 <div class="icon"><i class="icon fa-regular fa-envelope"></i></div>
                 <hr>
             </div>
@@ -87,50 +90,69 @@
             <div class="dl language"></div>
             
         </div>
-        <div class="main">
-            <div class="upper">
-                <div class="text">
+        <section class="main">          
+                <div class="upper">
+                    <div class="fortab">
+                        <button class="showleft" onclick="showleft()">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                        <div class="toggle-btn">
+                            <input type="checkbox" id="toggleMode">
+                            <label for="toggleMode" class="toggle">
+                                <i class="fa-solid fa-sun"></i>
+                                <i class="fa-solid fa-moon"></i>
+                                <span class="ball"></span>
+                            </label>
+                        </div>
+                    </div>
+                    
                     <div class="text2">
-                        <span class="span">Hi, I'm Abdullah</span>
-                        <ul>
-                            <li><span>Frontend Developer.</span></li>
-                            <li><span>Programmer.</span></li>
-                            <li><span>AI Prompt Engr.</span></li>
-                            <li><span>Freelancer.</span></li>
-                        </ul>
-                        <span class="span2">Lorem ipsum dolor sit amet,
-                             consectetur adipiscing elit, sed do eiusmod tempor
-                             ut labore et dolore magna aliqua.</span>
+                            <span class="span">Hi, I'm Abdullah</span>
+                            <ul>
+                                <li><span>Frontend Developer.</span></li>
+                                <li><span>Programmer.</span></li>
+                                <li><span>AI Prompt Engr.</span></li>
+                                <li><span>Freelancer.</span></li>
+                            </ul>
+                            <div class="cv_div">
+                                <a href="https://drive.google.com/file/d/1uzhA6Iv0gIw81cflp_CYG2EFuU5v4poN/view?usp=sharing" target="_blank" rel="noopener noreferrer"><button id="cv-dwnld"></button></a>
+                                <label data="Download" class="cv" for="cv-dwnld">
+                                    <i class="fa-solid fa-file-arrow-down"></i>
+                                    <span>CV</span>
+                                </label>
+                            </div>
+                            <!-- <span class="span2"></span> -->
+                    </div>
+                    <div class="picture"></div>
+                    
+
+                </div>
+                <div class="lower">
+                    <div class="serviceText">
+                        <h2>My Practices</h2>
+                        <p>Bridging creativity and logic through design, development, and AI-driven innovation,
+                             crafting seamless digital experiences with every project.</p>
+                    </div>
+                    <div class="serviceOptions">
+                        <div class="options">
+                            <i class="fa-solid fa-laptop-code"></i>
+                            <span>Web Development</span>
+                            <span style="font-size: 15px;">Front-End Developer</span>
+                        </div>
+                        <div class="options">
+                            <i class="fa-solid fa-code"></i>
+                            <span>Programming</span>
+                            <span style="font-size: 15px;">C++</span>
+                        </div>
+                        <div class="options">
+                            <i class="fa-solid fa-robot"></i>
+                            <span>AI Prompt Engineering</span>
+                            <span></span>
+                        </div>
                     </div>
                 </div>
-                <div class="picture"></div>
-            </div>
-            <div class="lower">
-                <div class="serviceText">
-                    <h2>My Services</h2>
-                    <p>Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit, sed do eiusmod tempor
-                        ut labore et dolore magna aliqua.</p>
-                </div>
-                <div class="serviceOptions">
-                    <div class="options">
-                        <i class="fa-solid fa-laptop-code"></i>
-                        <span>Web Development</span>
-                        <span>Front-End Developer</span>
-                    </div>
-                    <div class="options">
-                        <i class="fa-solid fa-code"></i>
-                        <span>Programming</span>
-                        <span>C++</span>
-                    </div>
-                    <div class="options">
-                        <i class="fa-solid fa-robot"></i>
-                        <span>AI Prompt Engineering</span>
-                        <span></span>
-                    </div>
-                </div>
-            </div>
-        </div>
+            
+        </section>
         <div class="right">
             <div class="toggle-btn">
                 <input type="checkbox" id="toggleMode">
@@ -155,8 +177,8 @@
             <div data="Blog" style="--accent-color: #ffb300" class="control control-5">
                 <i class="fa-brands fa-microblog"></i>
             </div>
-            <div>
-                <a href="https://drive.google.com/file/d/1mTOulFEVOSRRlyEZP094d7vnUH5eKuQs/view?usp=sharing" target="_blank"><button id="cv-dwnld"></button></a>
+            <div class="cv_div">
+                <a href="https://drive.google.com/file/d/1uzhA6Iv0gIw81cflp_CYG2EFuU5v4poN/view?usp=sharing" target="_blank" rel="noopener noreferrer"><button id="cv-dwnld"></button></a>
                 <label data="Download" class="cv" for="cv-dwnld">
                     <i class="fa-solid fa-file-arrow-down"></i>
                     <span>CV</span>
