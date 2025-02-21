@@ -33,7 +33,9 @@
 body{
     background-color: var(--body-color);
     margin: auto;
+    height: 100%;
     min-height: 100vh;
+    max-width: 100%;
     min-width: 100vh;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -44,7 +46,7 @@ body{
     position: relative;
     background-color: var(--container-color);
     /* min-height: 90%; */
-    height: 100%;
+    min-height: 100vh;
     box-sizing: content-box;  
     width: 100%;
     /*min-width: 95%;*/
@@ -55,6 +57,7 @@ body{
     grid-gap: 20px;
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.8);
 }
+/* left bar */
 .left{
     background-color: var(--div-color);
     /* border-radius: 20px 0 0 20px; */
@@ -69,6 +72,9 @@ body{
     overflow-y: auto;
     overflow-x: hidden;
     scrollbar-width: none;
+}
+.left .hideleft{
+    display: none;
 }
 /* .left .dl{
     background-color: #000000;
@@ -207,7 +213,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: center; */
+    justify-content: space-around;
     height: 100vh;
     width: 95px;
     position: fixed;
@@ -216,17 +222,12 @@ body{
     overflow-x: hidden;
     scrollbar-width: none;
 }
-.toggle-btn{
-    padding-top: 20px;
-    height: 120px;
-    
-}
 .toggle{
     position: relative;
     width: 60px;
     height: 25px;
     border-radius: 50px;
-    margin-bottom: 1.5rem;
+    /* margin-bottom: 1.5rem; */
     cursor: pointer;
     display: flex;
     justify-content: space-between;
@@ -271,7 +272,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 1.5rem 0;
+    /* margin: 1.5rem 0; */
     box-shadow: 0 3px 10px var(--controll-shadow-color1),
                 inset 0 3px 10px var(--controll-shadow-color2);
                
@@ -330,13 +331,13 @@ body{
 #cv-dwnld{
     display: none;
 }
-.right .cv{
+.cv{
     position: relative;
     width: 80px;
     height: 25px;
     border-radius: 50px;
-    margin-bottom: 1.5rem;
-    margin-top: 50px;
+    /* margin-bottom: 1.5rem; */
+    /* margin-top: 50px; */
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -346,21 +347,22 @@ body{
     transition: 0.3s;
     color: var(--text-color);
 }
-.right .cv span{
+.cv span{
     font-size: 18px;
     font-weight: 500;
     padding-left: 10px;
 }
-.right .cv i{
+.cv i{
     color: var(--text-color);
 }
 .main{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 40vh auto;
-    grid-gap: 20px
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
 }
 .upper{
+    flex-grow: 1;
     background-color: var(--div-color);
     border-radius: 0 0 3px 3px;
     /* background-image: url('2865.jpg'); */
@@ -369,52 +371,47 @@ body{
     background-repeat: no-repeat;
     display: grid;
     grid-template-columns: 2fr 1fr;
-    min-height: 25vh;
-}
-.upper .text{
-    /* background-color: #91919168; */
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    justify-content: flex-end;
-
-}
-.upper .text .text2{
-    /* background-color: #c3c3c3; */
-    height: 100%;
+    height: 230px;
     width: 100%;
+    
+}
+.upper .fortab{
+    display: none;
+}
+.upper .text2{
+    /* background-color: #c3c3c3; */
     display: flex;
     flex-direction: column;
+    margin-left: 35px;
+    margin-top: 65px;
 
 }
-.upper .text .text2 .span{
-    font-size: 3vw;
+.upper .text2 .cv{
+    display: none;
+}
+.upper .text2 .span{
+    font-size: clamp(2rem, 3vw, 3rem);
     font-weight: 700;
     display: inline-block;
-    margin: 0;
     padding: 0;
     color: var(--text-color);
-    position: absolute;
-    top: 6vh;
-    left: 20%;
+    
 }
-.upper .text .text2 span{
+.upper .text2 span{
     display: inline-block;
 }
-.upper .text .text2 ul{
+.upper .text2 ul{
     list-style: none;
     padding: 0;
-    margin: .5vh 0 1vh 0;
-    height: 6vh ;
-    line-height: 6vh;
+    margin: 0;
+    height:  3rem;
+    line-height: 3rem;
     overflow: hidden;
-    position: absolute;
-    top: 35%;
-    left: 20%;
+    margin-bottom: 10px;
 }
-.upper .text .text2 li{
+.upper .text2 li{
     list-style: none;
-    font-size: 2vw;
+    font-size: 25px;
     font-weight: 700;
     color: var(--body-color);
     position: relative;
@@ -423,13 +420,13 @@ body{
 }
 @keyframes slide {
     100%{
-        top: -24vh;
+        top: -12rem;
     }
 }
-.upper .text .text2 li span{
+.upper .text2 li span{
     position: relative;
 }
-.upper .text .text2 li span::after{
+.upper .text2 li span::after{
     content: "";
     position: absolute;
     left: 0;
@@ -446,21 +443,17 @@ body{
         margin: 0 -15px 0 10px;
     }
 }
-.upper .text .text2 .span2{
-    font-size: 1.2vw;
-    margin-top: 1rem ;
+/* .upper .text2 .span2{
+    font-size: 1.2rem;
     padding: 0;
     width: 20vw;
     color: var(--text-color);
-    position: absolute;
-    top: 50%;
-    left: 20%;
-}
+} */
 .upper .picture{
     /* background-color: #bd93933b; */
     background: url('bais_nobg.png') no-repeat center/contain;
-    max-width: 100%;
-    height: auto;
+    /* max-width: auto;
+    height: auto; */
 }
 .lower{
     
@@ -478,11 +471,17 @@ body{
     color: var(--text-color);
     
 }
-.serviceText > p, h2{
+.serviceText h2{
     max-width: 500px;
-    margin: 2px; /* Remove default margin */
-    padding: 0; /* Ensure no extra space */
-    line-height: 1
+    margin: 2px;
+    padding: 0;
+    line-height: 1 
+}
+.serviceText p{
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    max-width: 500px;
+    margin: 2px;
 }
 .serviceOptions{
     padding-left: 30px;
@@ -520,4 +519,177 @@ body{
     padding: 0;
     font-size: 1.2rem;
     font-weight: 500;
+}
+/* for tablets */
+@media only screen and (max-width: 768px){
+.dummy-left{
+    display: none;
+}
+.right{
+    background-color: var(--container-color);
+    /* border-radius: 0 20px 20px 0; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+    bottom: 0;
+    box-shadow:0 3px 15px var(--controll-shadow-color1)
+}
+.control::before{
+    display: none;
+}
+.control::after{
+    display: none;
+}
+.dummy-right{
+    display: none;
+}
+.right .toggle-btn{
+    display: none;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+}
+.main{
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 50px;
+}
+.upper .fortab{
+    position: fixed;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    margin-top: 2px;
+
+}
+.upper .fortab .showleft{
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+    border-radius: 50%;
+    border: none;
+    box-shadow: 0 3px 10px var(--controll-shadow-color1),
+                inset 0 3px 10px var(--controll-shadow-color2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.6;
+}
+.showleft i{
+    font-size: x-large;
+}
+.upper .fortab .toggle-btn{
+    margin-right: 10px;
+    opacity: 0.6;
+}
+.upper .text2 .cv{
+    display: block;
+    position: relative;
+    width: 80px;
+    height: 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--toggle-grad);
+    box-shadow: var(--toggle-shadow);
+    transition: 0.3s;
+    color: var(--text-color);
+}
+.right .cv_div{
+    display: none;
+}
+.left{
+    /* display: none !important; */
+    background-color: var(--div-color);
+    /* border-radius: 20px 0 0 20px; */
+    height: 100%;
+    width: 230px;
+    margin-bottom: 50px;
+    display: grid;
+    grid-template-columns: 200px;
+    grid-template-rows: min-content 60px 40px 10px 100px 10px min-content 10px min-content 50px;
+    justify-content: center;
+    position: fixed;
+    z-index: 3;
+    left: -245px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    box-shadow:0 3px 15px var(--controll-shadow-color1);
+    transition: left 0.4s ease-in-out;
+}
+.left .hideleft{
+    position: absolute;
+    left: 190px;
+    width: 30px;
+    height: 30px;
+    margin-top: 5px;
+    border-radius: 50%;
+    border: none;
+    box-shadow: 0 3px 10px var(--controll-shadow-color1),
+                inset 0 3px 10px var(--controll-shadow-color2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.6;
+}
+.hideleft i{
+    font-size: x-large;
+}
+}
+/* for mobiles */
+@media only screen and (max-width: 480px){
+.upper .picture{
+    display: none;
+}
+
+.upper{
+    position: sticky;
+    z-index: -1;
+    top: -80px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 400px;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 75% 75%, 25% 75%, 0 100%);
+}
+.upper::after{
+    background-color: var(--body-color);
+    position: absolute;
+    bottom: 100px;
+    content: "";
+    width: 50%;
+    height: 3px;
+    border-radius: 30px 30px 0 0;
+}
+.upper .fortab{
+    position: fixed;
+    top: 0;
+}
+.upper .text2{
+    padding: 0;
+    margin: 0;
+    margin-top: 120px;
+}
+.lower .serviceText p{
+    width: 400px; 
+}
+.lower{
+    position: relative;
+    top: -90px;
+    z-index: -2;
+}
 }

@@ -31,3 +31,14 @@ const hr = document.querySelectorAll(".skill-hr");
 for(let i = 0; i < percentage.length; i++){
     hr[i].style.width = percentage[i].innerText;
 }
+
+//button function for show left bar
+const left = document.querySelector('.left');
+function showleft(){
+    left.style.left = 0;
+}
+
+//button function for hide left bar
+function hideleft(){
+    left.style.left = "-245px";
+}
