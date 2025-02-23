@@ -15,20 +15,22 @@
     --controll-icon-color: #000000;
 }
 .darkmode{
-    --body-color: #7b7a7a;
-    --container-color: #272222;
-    --div-color: #a7a7a7;
-    --text-color: #faf8f8;
+    --body-color: #EEEEEE;
+    --container-color: #222831;
+    --div-color: #393e46;
+    --text-color: #00ffee;
+    --active-color: #00ffee;
+    --active-i-color: #222831;
     --toggle-grad: linear-gradient(145deg, #4d4d4d, #a7a7a7);
-    --toggle-shadow: 3px 3px 10px #4d4d4d,
-                    -3px -3px 5px #e3e3e3;
+    --toggle-shadow: -3px -3px 10px #4d4d4d,
+                    3px 3px 5px #00ffee75;
     --ball-translate: translateX(30px);
     --toggle-sun-color: #ffb300;
     --toggle-moon-color: #ffffff;
     --ball-color: #ffb300;
-    --controll-shadow-color1: rgba(255, 255, 255, 0.8);
+    --controll-shadow-color1: #00ADB5;
     --controll-shadow-color2: rgba(0, 0, 0, 0.8);
-    --controll-icon-color: #ffffff;
+    --controll-icon-color: #0a585c;
 }
 body{
     background-color: var(--body-color);
