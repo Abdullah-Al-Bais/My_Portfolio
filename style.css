@@ -1,8 +1,10 @@
 :root{
-    --body-color:  #ffe600;
+    --body-color:  #f1b911;
     --container-color: #e3e3e3;
     --div-color: #ffffff;
     --text-color: #383838;
+    --active-color: #ffe600;
+    --active-i-color:#383838;
     --toggle-grad: linear-gradient(145deg, #dcdcdc, #ffffff);
     --toggle-shadow: 3px 3px 10px #ffb300,
                     -3px -3px 5px #bababa;
@@ -11,8 +13,10 @@
     --toggle-moon-color: #a7a7a7;
     --ball-color: #7b7a7a;
     --controll-shadow-color1:rgba(255, 183, 0, 0.851);
-    --controll-shadow-color2: rgba(0, 0, 0, 0.5);
+    --controll-shadow-color2: rgba(239, 100, 100, 0.647);
     --controll-icon-color: #000000;
+    --stop-color: rgb(216, 22, 22);
+    --circle-color1: #2b5c5890;
 }
 .darkmode{
     --body-color: #EEEEEE;
@@ -31,14 +35,12 @@
     --controll-shadow-color1: #00ADB5;
     --controll-shadow-color2: rgba(0, 0, 0, 0.8);
     --controll-icon-color: #0a585c;
+    --stop-color: rgb(199, 34, 245);
+    --circle-color1: #bdbbbb8e;
 }
 body{
     background-color: var(--body-color);
     margin: auto;
-    /* height: 100%;
-    min-height: 100vh;
-    max-width: 100%;
-    min-width: 100vh; */
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     display: grid;
@@ -47,20 +49,16 @@ body{
 .container{
     position: relative;
     background-color: var(--container-color);
-    /* min-height: 90%; */
-    min-height: 100vh;
+    min-height: 100%;
     box-sizing: content-box;  
     width: 100%;
-    /*min-width: 95%;*/
-    /*margin: 5% ;*/
-    /* border-radius: 20px; */
     display: grid;
     grid-template-columns: 230px auto 95px;
     grid-gap: 20px;
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.8);
 }
-/* left bar */
 .left{
+    
     background-color: var(--div-color);
     /* border-radius: 20px 0 0 20px; */
     height: 100vh;
@@ -84,7 +82,7 @@ body{
     margin-bottom: 10px;
 } */
 .left .pic{
-    background-color: #e3e3e3;
+    background-color: var(--container-color);
     background-image: url("bais_nobg.png");
     background-size: cover;
     background-position: center;
@@ -100,6 +98,7 @@ body{
 .left .text{
     margin-top: 5px;
     text-align: center;
+    color: var(--text-color);
 }
 .left .text h3{
     margin-top: 0px;
@@ -148,7 +147,7 @@ body{
     font-size: 13px;
 }
 .left .about .left-span{
-    background-color: var(--body-color);
+    background-color: var(--div-color);
     display: inline;
     border-radius: 3px;
     padding: 1px 3px;
@@ -183,7 +182,7 @@ body{
     border: none;
     height: 3px;
     margin: 0;
-    background: linear-gradient(to right, var(--body-color),var(--body-color),var(--body-color), black);
+    background: linear-gradient(to right, var(--body-color),var(--body-color), var(--stop-color));
     /* box-shadow: 0px 3px 2px var(--controll-shadow-color1); */
 }
 .left .extra-skill{
@@ -199,7 +198,7 @@ body{
 .left .extra-skill i{
     font-weight: bold;
     padding-bottom: 10px;
-    background: linear-gradient(to right, var(--body-color), rgb(0, 0, 0));
+    background: linear-gradient(to right, var(--body-color),var(--stop-color));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -281,13 +280,13 @@ body{
 
 }
 .right .active-btn{
-    background-color: var(--body-color) !important;
+    background-color: var(--active-color) !important;
     transition: all .5s ease-in-out;
     box-shadow: 0 3px 4px var(--controll-shadow-color1),
                 inset 0 3px 10px var(--controll-shadow-color2) !important;
 }
 .right .active-btn i{
-    color: var(--controll-icon-color) !important;
+    color: var(--active-i-color) !important;
 }
 .right .control i{
     font-size: 1.2rem;
@@ -366,7 +365,7 @@ body{
 .upper{
     flex-grow: 1;
     background-color: var(--div-color);
-    border-radius: 0 0 3px 3px;
+    border-radius: 3px;
     /* background-image: url('2865.jpg'); */
     background-size: cover; /* Adjust size */
     background-position: center 30%; /* Center the image */
@@ -392,7 +391,7 @@ body{
     display: none;
 }
 .upper .text2 .span{
-    font-size: clamp(2rem, 3vw, 3rem);
+    font-size: clamp(2rem, 3vw, 6rem);
     font-weight: 700;
     display: inline-block;
     padding: 0;
@@ -413,7 +412,7 @@ body{
 }
 .upper .text2 li{
     list-style: none;
-    font-size: 25px;
+    font-size: 1.8rem;
     font-weight: 700;
     color: var(--body-color);
     position: relative;
@@ -462,7 +461,7 @@ body{
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 0.5fr min-content;
-    grid-gap: 30px
+    grid-gap: 45px
 }
 .serviceText{
     text-align: center;
@@ -500,8 +499,8 @@ body{
 }
 .options{
     background-color: var(--div-color);
-    width: 200px;
-    height: 200px;  
+    width: 160px;
+    height: 160px;  
     padding: 20px;
     text-align: center; 
     color: var(--text-color);
@@ -522,6 +521,249 @@ body{
     font-size: 1.2rem;
     font-weight: 500;
 }
+/* skill section */
+#Skill {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+#Skill .skillPicture{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+#Skill .skillPicture img{
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    width: auto;
+}
+.skillRoom{
+    /* background-color: var(--div-color); */
+    width: 160px;
+    height: 160px;  
+    color: var(--text-color);
+    border-radius: 10px;
+    position: relative;
+}
+.skillRoom .outer{
+    height: 160px;
+    width: 160px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+                -6px -6px 10px -1px var(--circle-color1);
+}
+.skillRoom .inner{
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
+                inset -4px -4px 6px -1px var(--circle-color1),
+                -0.5px -0.5px 0px rgba(255, 255, 255, 1),
+                0.5px 0.5px 0px rgba(0, 0, 0, 0.15),
+                0px 12px 10px -10px rgba(0, 0, 0, 0.05)
+}
+.inner img{
+    height: 70px;
+}
+.inner h4{
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    display: inline-block;
+}
+
+.numb{
+    color: var(--text-color);
+    font-weight: bold;
+    font-size: 1rem;
+}
+.skillRoom circle{
+    fill: none;
+    stroke: url(#GradientColor);
+    stroke-width: 20px;
+    stroke-dasharray: 440;
+     
+}
+.circle1{
+    stroke-dashoffset: 440;
+    animation: circle1 2s linear forwards;
+}
+@keyframes circle1 {
+    100%{
+        stroke-dashoffset: 44;
+    }  
+}
+.circle2{
+    stroke-dashoffset: 440;
+    animation: circle2 2s linear forwards;
+}
+@keyframes circle2 {
+    100%{
+        stroke-dashoffset: 66;
+    }  
+}
+.circle3{
+    stroke-dashoffset: 440;
+    animation: circle3 2s linear forwards;
+}
+@keyframes circle3 {
+    100%{
+        stroke-dashoffset: 88;
+    }  
+}
+.circle4{
+    stroke-dashoffset: 440;
+    animation: circle4 2s linear forwards;
+}
+@keyframes circle4 {
+    100%{
+        stroke-dashoffset: 88;
+    }  
+}
+.circle5{
+    stroke-dashoffset: 440;
+    animation: circle5 2s linear forwards;
+}
+@keyframes circle5 {
+    100%{
+        stroke-dashoffset: 132;
+    }  
+}
+.circle6{
+    stroke-dashoffset: 440;
+    animation: circle6 2s linear forwards;
+}
+@keyframes circle6 {
+    100%{
+        stroke-dashoffset: 242;
+    }  
+}
+.circle7{
+    stroke-dashoffset: 440;
+    animation: circle7 2s linear forwards;
+}
+@keyframes circle7 {
+    100%{
+        stroke-dashoffset: 198;
+    }  
+}
+.circle8{
+    stroke-dashoffset: 440;
+    animation: circle8 2s linear forwards;
+}
+@keyframes circle8 {
+    100%{
+        stroke-dashoffset: 154;
+    }  
+}
+.skillRoom svg{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.skillRoom #GradientColor .stop1{
+    stop-color: var(--active-color);
+}
+.skillRoom #GradientColor .stop2{
+    stop-color: var(--stop-color);
+}
+#Education{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+#Education .eduPicture{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+#Education .eduPicture img{
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    width: auto;
+}
+.timeline{
+    position: relative;
+    /* max-width: 1200px; */
+    /* margin: 20px auto; */
+}
+.timeline::after{
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    background: #00ffee;
+    top: 0;
+    left: 50%;
+    margin-left: -3px;
+    
+}
+.time-container{
+    box-sizing: border-box;
+    padding: 10px 25px; 
+    position: relative;
+    width: 50%;
+}
+.textbox{
+    padding: 15px 15px;
+    position: relative;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+.time-left-container .textbox{
+    background: linear-gradient(to left, var(--div-color),var(--div-color), var(--active-color));
+}
+.time-right-container .textbox{
+    background: linear-gradient(to right, var(--div-color),var(--div-color), var(--active-color));
+}
+.time-left-container{
+    left: 0;
+}
+.time-right-container{
+    left: 50%;
+}
+.time-container i{
+    position: absolute;
+    font-size: large;
+    right: -20px;
+    top: 32px;
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    background-color: #f39f0c;
+}
+.time-right-container i{
+    left: -20px;
+}
+#Experience{
+    width: 100%;
+    height: 100vh;
+    background-color: #106218;
+}
+#Blog{
+    width: 100%;
+    height: 100vh;
+    background-color: #7b110f;
+}
+
+
 /* for tablets */
 @media only screen and (max-width: 768px){
 .dummy-left{
@@ -657,25 +899,10 @@ body{
 .upper .picture{
     display: none;
 }
-
 .upper{
-    position: sticky;
-    z-index: -1;
-    top: -80px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    height: 400px;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 75% 75%, 25% 75%, 0 100%);
-}
-.upper::after{
-    background-color: var(--body-color);
-    position: absolute;
-    bottom: 100px;
-    content: "";
-    width: 50%;
-    height: 3px;
-    border-radius: 30px 30px 0 0;
 }
 .upper .fortab{
     position: fixed;
@@ -684,14 +911,15 @@ body{
 .upper .text2{
     padding: 0;
     margin: 0;
-    margin-top: 120px;
+    margin-top: 80px;
 }
 .lower .serviceText p{
-    width: 400px; 
+    width: 300px; 
 }
-.lower{
-    position: relative;
-    top: -90px;
-    z-index: -2;
+#Skill .skillPicture{
+    display: none;
+}
+#Education .eduPicture{
+    display: none;
 }
 }

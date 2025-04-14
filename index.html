@@ -89,70 +89,304 @@
             </div>
             <div class="dl language"></div>
             
-        </div>
-        <section class="main">          
-                <div class="upper">
-                    <div class="fortab">
-                        <button class="showleft" onclick="showleft()">
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </button>
-                        <div class="toggle-btn">
-                            <input type="checkbox" id="toggleMode">
-                            <label for="toggleMode" class="toggle">
-                                <i class="fa-solid fa-sun"></i>
-                                <i class="fa-solid fa-moon"></i>
-                                <span class="ball"></span>
-                            </label>
-                        </div>
-                    </div>
-                    
-                    <div class="text2">
-                            <span class="span">Hi, I'm Abdullah</span>
-                            <ul>
-                                <li><span>Frontend Developer.</span></li>
-                                <li><span>Programmer.</span></li>
-                                <li><span>AI Prompt Engr.</span></li>
-                                <li><span>Freelancer.</span></li>
-                            </ul>
-                            <div class="cv_div">
-                                <a href="https://drive.google.com/file/d/1uzhA6Iv0gIw81cflp_CYG2EFuU5v4poN/view?usp=sharing" target="_blank" rel="noopener noreferrer"><button id="cv-dwnld"></button></a>
-                                <label data="Download" class="cv" for="cv-dwnld">
-                                    <i class="fa-solid fa-file-arrow-down"></i>
-                                    <span>CV</span>
+        </div>          
+        <div class="main" id="Home">
+                    <div class="upper">
+                        <div class="fortab">
+                            <button class="showleft" onclick="showleft()">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                            <div class="toggle-btn">
+                                <input type="checkbox" id="toggleMode">
+                                <label for="toggleMode" class="toggle">
+                                    <i class="fa-solid fa-sun"></i>
+                                    <i class="fa-solid fa-moon"></i>
+                                    <span class="ball"></span>
                                 </label>
                             </div>
-                            <!-- <span class="span2"></span> -->
-                    </div>
-                    <div class="picture"></div>
+                        </div>
                     
-
+                        <div class="text2">
+                                <span class="span">Hi, I'm Abdullah</span>
+                                <ul>
+                                    <li><span>Frontend Developer.</span></li>
+                                    <li><span>Programmer.</span></li>
+                                    <li><span>AI Prompt Engr.</span></li>
+                                    <li><span>Freelancer.</span></li>
+                                </ul>
+                                <div class="cv_div">
+                                    <a href="https://drive.google.com/file/d/1uzhA6Iv0gIw81cflp_CYG2EFuU5v4poN/view?usp=sharing" target="_blank" rel="noopener noreferrer"><button id="cv-dwnld"></button></a>
+                                    <label data="Download" class="cv" for="cv-dwnld">
+                                        <i class="fa-solid fa-file-arrow-down"></i>
+                                        <span>CV</span>
+                                    </label>
+                                </div>
+                                <!-- <span class="span2"></span> -->
+                        </div>
+                        <div class="picture"></div>
+                    </div>
+                    <div class="lower">
+                        <div class="serviceText">
+                            <h2>My Practices</h2>
+                            <p>Bridging creativity and logic through design, development, and AI-driven innovation,
+                                 crafting seamless digital experiences with every project.</p>
+                        </div>
+                        <div class="serviceOptions">
+                            <div class="options">
+                                <i class="fa-solid fa-laptop-code"></i>
+                                <span>Web Development</span>
+                                <span style="font-size: 15px;">Front-End Developer</span>
+                            </div>
+                            <div class="options">
+                                <i class="fa-solid fa-code"></i>
+                                <span>Programming</span>
+                                <span style="font-size: 15px;">C++</span>
+                            </div>
+                            <div class="options">
+                                <i class="fa-solid fa-robot"></i>
+                                <span>AI Prompt Engineering</span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+            <section id="Skill">
+                <div class="upper">
+                    <div class="text2">
+                            <span class="span">My Technical Arsenal</span>
+                            <ul id="skillsList">
+                                <li><span>JavaScript </span></li>
+                                <li><span>React </span></li>
+                                <li><span>Tailwind-CSS </span></li>
+                                <li><span>HTML </span></li>
+                                <li><span>PHP </span></li>
+                            </ul>
+                    </div>
+                    <div class="skillPicture">
+                        <img src="skillpic.png" alt="skill_picture">
+                    </div>
                 </div>
                 <div class="lower">
                     <div class="serviceText">
-                        <h2>My Practices</h2>
-                        <p>Bridging creativity and logic through design, development, and AI-driven innovation,
-                             crafting seamless digital experiences with every project.</p>
+                        <p>As a developer, I thrive on turning ideas into reality with 
+                            the right tools and technologies. My skill set is a combination of creativity, problem-solving, and technical expertise, enabling 
+                            me to build seamless digital experiences. Here’s what I work with:</p>
                     </div>
                     <div class="serviceOptions">
-                        <div class="options">
-                            <i class="fa-solid fa-laptop-code"></i>
-                            <span>Web Development</span>
-                            <span style="font-size: 15px;">Front-End Developer</span>
+                        <div class="skillRoom">
+                            <div class="outer">
+                                <div class="inner">
+                                    <!-- <i class="fa-brands fa-js"></i> -->
+                                     <img src="icons8-js.svg" alt="JS">
+                                    <h4>JavaScript</h4>
+                                    <div class="numb" percent="80"></div>
+                                </div>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                                <defs>
+                                   <linearGradient id="GradientColor">
+                                      <stop class="stop1" offset="0%"/>
+                                      <stop class="stop2" offset="100%"/>
+                                   </linearGradient>
+                                </defs>
+                                <circle class="circle3" percent="80" cx="80" cy="80" r="70" stroke-linecap="round" />
+                            </svg>
                         </div>
-                        <div class="options">
-                            <i class="fa-solid fa-code"></i>
-                            <span>Programming</span>
-                            <span style="font-size: 15px;">C++</span>
+                        <div class="skillRoom">
+                            <div class="outer">
+                                <div class="inner">
+                                    <!-- <i class="fa-brands fa-html5"></i> -->
+                                     <img src="icons8-html.svg" alt="HTML">
+                                    <h4>HTML</h4>
+                                    <div class="numb" percent="90"></div>
+                                </div>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                                <defs>
+                                   <linearGradient id="GradientColor">
+                                      <stop class="stop1" offset="0%"/>
+                                      <stop class="stop2" offset="100%"/>
+                                   </linearGradient>
+                                </defs>
+                                <circle class="circle1" percent="90" cx="80" cy="80" r="70" stroke-linecap="round" />
+                            </svg>
                         </div>
-                        <div class="options">
-                            <i class="fa-solid fa-robot"></i>
-                            <span>AI Prompt Engineering</span>
-                            <span></span>
+                        <div class="skillRoom">
+                            <div class="outer">
+                                <div class="inner">
+                                    <!-- <i class="fa-brands fa-css3-alt"></i> -->
+                                     <img src="icons8-css.svg" alt="CSS">
+                                    <h4>CSS</h4>
+                                    <div class="numb" percent="85"></div>
+                                </div>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                                <defs>
+                                   <linearGradient id="GradientColor">
+                                      <stop class="stop1" offset="0%"/>
+                                      <stop class="stop2" offset="100%"/>
+                                   </linearGradient>
+                                </defs>
+                                <circle class="circle2" percent="85" cx="80" cy="80" r="70" stroke-linecap="round" />
+                            </svg>
+                        </div> 
+                        <div class="skillRoom">
+                            <div class="outer">
+                                <div class="inner">
+                                    <!-- <i class="fa-brands fa-js"></i> -->
+                                     <img src="icons8-react.svg" alt="JS">
+                                    <h4>React.JS</h4>
+                                    <div class="numb" percent="55"></div>
+                                </div>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                                <defs>
+                                   <linearGradient id="GradientColor">
+                                      <stop class="stop1" offset="0%"/>
+                                      <stop class="stop2" offset="100%"/>
+                                   </linearGradient>
+                                </defs>
+                                <circle class="circle7" percent="55" cx="80" cy="80" r="70" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <div class="skillRoom">
+                            <div class="outer">
+                                <div class="inner">
+                                    <!-- <i class="fa-brands fa-js"></i> -->
+                                     <img src="icons8-tailwind-css.svg" alt="JS">
+                                    <h4>TailwindCSS</h4>
+                                    <div class="numb" percent="65"></div>
+                                </div>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                                <defs>
+                                   <linearGradient id="GradientColor">
+                                      <stop class="stop1" offset="0%"/>
+                                      <stop class="stop2" offset="100%"/>
+                                   </linearGradient>
+                                </defs>
+                                <circle class="circle8" percent="65" cx="80" cy="80" r="70" stroke-linecap="round" />
+                            </svg>
+                        </div>                    
+                        <div class="skillRoom">
+                            <div class="outer">
+                                <div class="inner">
+                                    <img src="icons8-c++.svg" alt="">
+                                    <h4>C/C++</h4>
+                                    <div class="numb" percent="80"></div>
+                                </div>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                                <defs>
+                                   <linearGradient id="GradientColor">
+                                      <stop class="stop1" offset="0%"/>
+                                      <stop class="stop2" offset="100%"/>
+                                   </linearGradient>
+                                </defs>
+                                <circle class="circle4" percent="80" cx="80" cy="80" r="70" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <div class="skillRoom">
+                            <div class="outer">
+                                <div class="inner">
+                                    <!-- <i class="fa-brands fa-python"></i> -->
+                                     <img src="icons8-python.svg" alt="Python">
+                                    <h4>Python</h4>
+                                    <div class="numb" percent="70"></div>
+                                </div>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                                <defs>
+                                   <linearGradient id="GradientColor">
+                                      <stop class="stop1" offset="0%"/>
+                                      <stop class="stop2" offset="100%"/>
+                                   </linearGradient>
+                                </defs>
+                                <circle class="circle5" percent="70" cx="80" cy="80" r="70" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <div class="skillRoom">
+                            <div class="outer">
+                                <div class="inner">
+                                    <!-- <i class="fa-brands fa-php"></i> -->
+                                     <img src="icons8-php.svg" alt="">
+                                    <h4>PHP</h4>
+                                    <div class="numb" percent="45"></div>
+                                </div>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                                <defs>
+                                   <linearGradient id="GradientColor">
+                                      <stop class="stop1" offset="0%"/>
+                                      <stop class="stop2" offset="100%"/>
+                                   </linearGradient>
+                                </defs>
+                                <circle class="circle6" percent="45" cx="80" cy="80" r="70" stroke-linecap="round" />
+                            </svg>
                         </div>
                     </div>
                 </div>
-            
-        </section>
+            </section>
+            <section id="Education">
+                <div class="upper">
+                    <div class="text2">
+                            <span class="span">
+                                The Foundation of <br> My Journey
+                            </span>
+                    </div>
+                    <div class="eduPicture">
+                        <img src="institution.png" alt="skill_picture">
+                    </div>
+                </div>
+                <div class="lower">
+                    <div class="serviceText">
+                        <p>Every great achievement begins with a solid foundation. 
+                            My academic journey has shaped my skills, fueled my curiosity, 
+                            and prepared me for the challenges ahead.  Here’s where it all began!</p>
+                    </div>
+                    <div class="timeline">
+                        <div class="time-container time-left-container">
+                            <i class="fa-solid fa-school"></i>
+                            <div class="textbox ">
+                                <h2>Aurora International School</h2>
+                                <small>2004 - 2006</small>
+                                 <p>sjkfbnaskf akshfkj askdhcj askjfhmn eikahfn aishf aiuhfj coishjf coihwsebf oaisudfg rfiujfghsad ofigvs jdf </p>
+                            </div>
+                        </div>
+                        <div class="time-container time-right-container">
+                            <i class="fa-solid fa-school"></i>
+                            <div class="textbox">
+                                <h2>Banani Bidyaniketan School & College</h2>
+                                <small>2007 - 2016</small>
+                                 <p>sjkfbnaskf akshfkj askdhcj askjfhmn eikahfn aishf aiuhfj coishjf coihwsebf oaisudfg rfiujfghsad ofigvs jdf </p>
+                            </div>
+                        </div>
+                        <div class="time-container time-left-container">
+                            <i class="fa-solid fa-school"></i>
+                            <div class="textbox ">
+                                <h2>Adamjee Cantonment College</h2>
+                                <small>2016 - 2018</small>
+                                 <p>sjkfbnaskf akshfkj askdhcj askjfhmn eikahfn aishf aiuhfj coishjf coihwsebf oaisudfg rfiujfghsad ofigvs jdf </p>
+                            </div>
+                        </div>
+                        <div class="time-container time-right-container">
+                            <i class="fa-solid fa-school"></i>
+                            <div class="textbox">
+                                <h2>Rajshahi University of Engineering & Technology</h2>
+                                <small>2019 - 2024</small>
+                                 <p>sjkfbnaskf akshfkj askdhcj askjfhmn eikahfn aishf aiuhfj coishjf coihwsebf oaisudfg rfiujfghsad ofigvs jdf </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <section id="Experience">
+                
+            </section>
+            <section id="Blog">
+                
+            </section>
+        </div>     
         <div class="right">
             <div class="toggle-btn">
                 <input type="checkbox" id="toggleMode">
