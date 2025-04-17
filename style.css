@@ -16,7 +16,9 @@
     --controll-shadow-color2: rgba(239, 100, 100, 0.647);
     --controll-icon-color: #000000;
     --stop-color: rgb(216, 22, 22);
-    --circle-color1: #2b5c5890;
+    --circle-color1: #000000ab;
+    --timeline-icolor: rgb(216, 22, 22);
+    --text-bgc: #ffffff93;
 }
 .darkmode{
     --body-color: #EEEEEE;
@@ -36,7 +38,9 @@
     --controll-shadow-color2: rgba(0, 0, 0, 0.8);
     --controll-icon-color: #0a585c;
     --stop-color: rgb(199, 34, 245);
-    --circle-color1: #bdbbbb8e;
+    --circle-color1: #000000ab;
+    --timeline-icolor: rgb(0, 0, 0);
+    --text-bgc: #6d6d6da4;
 }
 body{
     background-color: var(--body-color);
@@ -183,7 +187,6 @@ body{
     height: 3px;
     margin: 0;
     background: linear-gradient(to right, var(--body-color),var(--body-color), var(--stop-color));
-    /* box-shadow: 0px 3px 2px var(--controll-shadow-color1); */
 }
 .left .extra-skill{
     display: grid;
@@ -374,7 +377,7 @@ body{
     grid-template-columns: 2fr 1fr;
     height: 230px;
     width: 100%;
-    
+    box-shadow:  1px 1px 10px #00000095;
 }
 .upper .fortab{
     display: none;
@@ -494,8 +497,6 @@ body{
     box-sizing: border-box;
     padding-bottom: 0px;
     gap: 30px;
-
-
 }
 .options{
     background-color: var(--div-color);
@@ -508,7 +509,11 @@ body{
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 100px min-content min-content;
-
+    box-shadow:  1px 1px 10px #000000ba;
+}
+.options:hover{
+    box-shadow:  4px 4px 30px #000000ba;
+    transform: scale(1.002);
 }
 .options i{
     font-size: 3rem;
@@ -569,7 +574,7 @@ body{
     justify-content: center;
     box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
                 inset -4px -4px 6px -1px var(--circle-color1),
-                -0.5px -0.5px 0px rgba(255, 255, 255, 1),
+                -0.5px -0.5px 5px rgba(0, 0, 0, 0.874),
                 0.5px 0.5px 0px rgba(0, 0, 0, 0.15),
                 0px 12px 10px -10px rgba(0, 0, 0, 0.05)
 }
@@ -698,6 +703,7 @@ body{
 }
 .timeline{
     position: relative;
+    color: var(--text-color);
     /* max-width: 1200px; */
     /* margin: 20px auto; */
 }
@@ -706,37 +712,45 @@ body{
     position: absolute;
     width: 6px;
     height: 100%;
-    background: #00ffee;
+    background: var(--stop-color);
     top: 0;
     left: 50%;
     margin-left: -3px;
-    
+    border-radius: 30px;
 }
 .time-container{
     box-sizing: border-box;
-    padding: 10px 25px; 
+    padding: 10px 20px; 
     position: relative;
     width: 50%;
 }
 .textbox{
     padding: 15px 15px;
     position: relative;
-    border-radius: 6px;
+    border-radius: 15px;
     font-size: 1rem;
+    background-color: var(--div-color);
+    box-shadow:  1px 1px 10px #000000ba;
+    transition: transform 0.1s ease;
 }
-.time-left-container .textbox{
-    background: linear-gradient(to left, var(--div-color),var(--div-color), var(--active-color));
+.textbox:hover{
+    box-shadow:  4px 4px 30px #000000ba;
+    transform: scale(1.002);
 }
-.time-right-container .textbox{
-    background: linear-gradient(to right, var(--div-color),var(--div-color), var(--active-color));
+.textbox h2, h4{
+    color: var(--stop-color);
 }
+.textbox h2, h4, p{
+    margin: 8px;
+}
+
 .time-left-container{
     left: 0;
 }
 .time-right-container{
     left: 50%;
 }
-.time-container i{
+.time-container .fa-user-graduate{
     position: absolute;
     font-size: large;
     right: -20px;
@@ -745,22 +759,60 @@ body{
     width: 40px;
     height: 40px;
     line-height: 40px;
-    border-radius: 50%;
+    border-radius: 0 50% 50% 0;
     text-align: center;
-    background-color: #f39f0c;
+    background: linear-gradient(to left, var(--active-color), var(--div-color));
+    color:var(--timeline-icolor);
+    
 }
-.time-right-container i{
+.time-container .fa-user-tie{
+    position: absolute;
+    font-size: large;
+    right: -20px;
+    top: 32px;
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 0 50% 50% 0;
+    text-align: center;
+    background: linear-gradient(to left, var(--active-color), var(--div-color));
+    color:var(--timeline-icolor);
+    
+}
+.time-right-container .fa-user-graduate{
     left: -20px;
+    border-radius: 50% 0 0 50%;
+    background: linear-gradient(to right, var(--active-color), var(--div-color));
 }
-#Experience{
-    width: 100%;
-    height: 100vh;
-    background-color: #106218;
+.time-right-container .fa-user-tie{
+    left: -20px;
+    border-radius: 50% 0 0 50%;
+    background: linear-gradient(to right, var(--active-color), var(--div-color));
 }
-#Blog{
+#Experience {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     width: 100%;
-    height: 100vh;
-    background-color: #7b110f;
+}
+#Experience .expPicture{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+#Experience .expPicture img{
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    width: auto;
+}
+#Projects .upper{
+    background-image: url(underconstruction.jpg);
+    background-size: 70% 100%; 
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 
@@ -893,6 +945,7 @@ body{
 .hideleft i{
     font-size: x-large;
 }
+
 }
 /* for mobiles */
 @media only screen and (max-width: 480px){
@@ -919,7 +972,73 @@ body{
 #Skill .skillPicture{
     display: none;
 }
+#Skill .upper{
+    text-align: center;
+}
 #Education .eduPicture{
     display: none;
+}
+#Education .upper{
+    position: relative;
+}
+#Education .upper .text2{
+    z-index: 10;
+    background-color: var(--text-bgc);
+    text-align: center;
+}
+#Education .upper::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('institution.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5; /* Control image opacity */
+    z-index: 1;
+}
+#Education .span{
+    text-align: center;
+}
+.timeline::after{
+    left: 10%;
+    margin-right: -3px;
+}
+.time-container{
+    width: 85%;
+    left: 10%;
+}
+.time-container .fa-user-graduate{
+    left: -20px;
+    border-radius: 50% 0 0 50%;
+    background: linear-gradient(to right, var(--active-color), var(--div-color));   
+}
+.time-container .fa-user-tie{
+    left: -20px;
+    border-radius: 50% 0 0 50%;
+    background: linear-gradient(to right, var(--active-color), var(--div-color));   
+}
+.time-container h2{
+    font-size: 1.2rem;
+}
+#Experience .expPicture{
+    display: none;
+}
+#Experience .upper{
+    position: relative;
+}
+#Experience .upper .text2{
+    z-index: 10;
+    background-color: var(--text-bgc);
+    text-align: center;
+}
+#Experience .upper::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('experience.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5; /* Control image opacity */
+    z-index: 1;
 }
 }

@@ -20,6 +20,29 @@ function pageTransitions(){
     }
 }
 pageTransitions();
+//change controll to active when scrolled
+const secPage = document.querySelectorAll('.elem');
+const observer2 = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const page = entry.target;
+            const pageID = page.getAttribute("id")
+            for(let i = 0; i < sectBtn.length; i++){
+                if(sectBtn[i].getAttribute("data")===pageID){
+                let currentBtn = document.querySelectorAll('.active-btn');
+                currentBtn[0].className = currentBtn[0].className.replace('active-btn', '');
+                sectBtn[i].className += ' active-btn';
+                }
+            }
+        }
+    });
+}, { threshold: 0.3});
+function setActive(){
+    for(let i=0; i<secPage.length; i++){
+        observer2.observe(secPage[i]);
+    }
+}
+setActive();
 
 
 //toggle switch for darkmode
@@ -103,36 +126,5 @@ function loadSkillPercent (){
 }
 loadSkillPercent();
 
-//increase circle
 
-// function animateProgress(element, value) {
-//     let totalLength = 472;
-//     // Remove transition, reset stroke-dashoffset instantly
-//     element.style.transition = "none";
-//     element.style.strokeDashoffset = totalLength;
 
-//     // Force a browser reflow (restarts the animation)
-//     void circle.offsetWidth;
-//     // Reapply transition and set new stroke-dashoffset
-//     element.style.transition = "stroke-dashoffset 2s linear";
-//     element.style.strokeDashoffset = totalLength - (totalLength * value / 100); // 80% progress
-// }
-
-// const observer2 = new IntersectionObserver(entries => {
-//     entries.forEach(entry => {
-//         if (entry.isIntersecting) {
-//             const element = entry.target;
-//             const value = element.getAttribute("percent")
-
-//             setTimeout(animateProgress(element,value), 100);
-//         }
-//     });
-// }, { threshold: 0.5 });
-
-// const circle = document.querySelectorAll(".circle");
-// function loadCircle (){
-//     for(let i=0; i<circle.length; i++){
-//         observer2.observe(circle[i]);
-//     }
-// }
-// loadCircle();
