@@ -51,9 +51,9 @@ const body = document.querySelector("body");
 
 toggleMode.addEventListener("change", ()=> {
     if (toggleMode.checked) {
-        body.classList.add("darkmode"); // Enable dark mode
+        body.classList.add("lightmode"); // Enable dark mode
     } else {
-        body.classList.remove("darkmode"); // Disable dark mode
+        body.classList.remove("lightmode"); // Disable dark mode
     }
 });
 
