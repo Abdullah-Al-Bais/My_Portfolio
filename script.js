@@ -57,13 +57,12 @@ toggleMode.addEventListener("change", ()=> {
     }
 });
 
-//set width of hr according to the percentage of the skill
-
-const percentage = document.querySelectorAll(".percentage");
-const hr = document.querySelectorAll(".skill-hr");
-for(let i = 0; i < percentage.length; i++){
-    hr[i].style.width = percentage[i].innerText;
-}
+//set width of hr according to the percentage of the skil
+// const percentage = document.querySelectorAll(".percentage");
+// const hr = document.querySelectorAll(".skill-hr");
+// for(let i = 0; i < percentage.length; i++){
+//     hr[i].style.width = percentage[i].innerText;
+// }
 
 //button function for show left bar
 const left = document.querySelector('.left');

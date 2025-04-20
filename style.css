@@ -164,35 +164,31 @@ body{
                 inset 0 3px 5px var(--controll-shadow-color2);
 }
 .left .skill{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
     margin-top: 5px;
     margin-bottom: 20px;
     color: var(--text-color);
 }
 .left .skill .heading{
-    grid-column: 1 / -1;
     font-weight: bold;
-    font-size: 15px !important;
+    width: 100%;
+    font-size: 1rem !important;
     padding-bottom: 10px;
 }
-.left .skill .percentage{
-    text-align: right;
-}
-.left .skill span{
-    font-size: 12px;
+.skillBlock{
+    margin: 5px 5px 5px 0px;
     font-weight: 500;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    background-color: var(--div-color);
+    display: inline;
+    border-radius: 3px;
+    padding: 1px 3px;
+    box-shadow: 0 3px 3px var(--controll-shadow-color1),
+                inset 0 3px 5px var(--controll-shadow-color2);
 }
-.left .skill .skill-hr{
-    grid-column: 1 / -1;
-    display: inline;   
-}
-.left .skill .skill-hr hr{
-    border: none;
-    height: 3px;
-    margin: 0;
-    background: linear-gradient(to right, var(--body-color),var(--body-color), var(--stop-color));
-}
+
 .left .extra-skill{
     display: grid;
     color: var(--text-color);
